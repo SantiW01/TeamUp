@@ -1,0 +1,24 @@
+<div class="container theme-showcase" role="main">
+  <h3>Agregar estudiante al curso</h3>
+       <a href="/courses/details/post/newStudent/{{id}}">
+              <img
+                src="../../img/plus-circle.svg"
+                alt=""
+                title="Más información"
+              />
+  <div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered">
+      <tr>
+        <th>Nombre del alumno</th>
+        <th>Email del alumno</th>
+      </tr>
+      {{#each result}}
+        <tr>
+          <td>{{FullName}}</td>
+          <td>{{email}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+</div>

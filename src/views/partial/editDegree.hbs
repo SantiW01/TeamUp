@@ -1,0 +1,28 @@
+<div class="container theme-showcase" role="main">
+  <div class="page-header">
+    <h3 class="blog-title">
+      <span class="label label-success p-2">Editar datos del título</span>
+    </h3>
+  </div>
+  <form action="/degree/edit/{{degree.id}}" method="post">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Nombre</label>
+          <input
+            type="text"
+            value="{{degree.description}}"
+            class="form-control"
+            name="description"
+            placeholder="Nombre del título"
+            autofocus
+          />
+        </div>
+
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success w-10 m-2">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>

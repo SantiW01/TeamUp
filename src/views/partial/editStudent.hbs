@@ -1,0 +1,55 @@
+<div class="container theme-showcase" role="main">
+  <div class="page-header">
+    <h3 class="blog-title">
+      <span class="label label-success">Datos de la Profesora</span>
+    </h3>
+  </div>
+  <form action="/student/edit/{{student.id}}" method="post">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Nombre</label>
+          <input
+            type="text"
+            value="{{student.name}}"
+            class="form-control"
+            name="name"
+            placeholder="Nombre de la empleada"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Apellido</label>
+          <input
+            type="text"
+            value="{{student.surname}}"
+            class="form-control"
+            name="surname"
+            placeholder="Apellido de la empleada"
+            autofocus
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Email</label>
+          <input
+            type="email"
+            value="{{student.email}}"
+            class="form-control"
+            name="email"
+            placeholder="Email de la empleada"
+            autofocus
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success w-10 m-2 float-end">Guardar</button>
+    </div>
+  </form>
+</div>

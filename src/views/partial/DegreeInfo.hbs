@@ -1,0 +1,46 @@
+<div class="container theme-showcase" role="main">
+  <h3>Información sobre los títulos</h3>
+  <div class="table-responsive">
+    <a
+      href="degree/post"
+      class="btn btn-success float-start m-4"
+      role="button"
+      title="Nuevo"
+    >
+      Nuevo
+    </a>
+    <table class="table table-hover table-striped table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Description</th>
+      </tr>
+      {{#each result}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{description}}</td>
+          <td id="btn">
+            <a
+              href="degree/delete/{{id}}"
+              class="btn btn-danger btn-sm"
+              role="button"
+              title="Eliminar"
+            >
+              <img src="../../img/trash3-fill.svg" alt="" />
+            </a>
+            <a
+              href="degree/edit/{{id}}"
+              class="btn btn-success btn-sm"
+              role="button"
+              title="Editar"
+            >
+              <img src="../../img/pencil-fill.svg" alt="" />
+
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </table>
+
+  </div>
+</div>

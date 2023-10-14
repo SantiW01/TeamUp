@@ -1,0 +1,46 @@
+<div class="container theme-showcase" role="main">
+  <h3>Información sobre los alumnos</h3>
+  <div class="table-responsive">
+    <a
+      href="student/post"
+      class="btn btn-success float-start m-4"
+      role="button"
+      title="Nuevo"
+    >
+      Nuevo
+    </a>
+    <table class="table table-hover table-striped table-bordered">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+      </tr>
+      {{#each result}}
+        <tr>
+          <td>{{fullName}}</td>
+          <td id="info_email">{{email}}</td>
+          <td id="btn">
+            <a
+              href="student/delete/{{id}}"
+              class="btn btn-danger btn-sm"
+              role="button"
+              title="Eliminar"
+            >
+              <img src="../../img/trash3-fill.svg" alt="" />
+            </a>
+            <a
+              href="student/edit/{{id}}"
+              class="btn btn-success btn-sm"
+              role="button"
+              title="Editar"
+            >
+              <img src="../../img/pencil-fill.svg" alt="" />
+
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </table>
+
+  </div>
+</div>

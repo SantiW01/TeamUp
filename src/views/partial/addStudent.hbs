@@ -1,0 +1,24 @@
+<div class="container theme-showcase" role="main">
+  <div class="page-header">
+    <h3 class="blog-title">
+      <span class="label label-success p-2">Editar datos de la Profesora</span>
+    </h3>
+  </div>
+  <form action="/courses/details/post/newStudent/{{idC}}" method="post">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="control-label">Estudiantes</label>
+        <div class="d-flex flex-row">
+          <select name="id" class="form-control">
+            {{#each result}}
+              <option value="{{id}}">{{FullName}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success w-10 m-2 float-end">Guardar</button>
+    </div>
+  </form>
+</div>

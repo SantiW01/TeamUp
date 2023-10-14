@@ -1,0 +1,60 @@
+<div class="container theme-showcase" role="main">
+  <h3>Información sobre los cursos</h3>
+  <div class="table-responsive">
+    <a
+      href="courses/post"
+      class="btn btn-success float-start m-4"
+      role="button"
+      title="Nuevo"
+    >
+      Nuevo
+    </a>
+    <table class="table table-hover table-striped table-bordered">
+      <tr>
+        <th>id</th>
+        <th>Descripción</th>
+        <th>Horario</th>
+        <th>Nombre de la profesora</th>
+        <th>Email de la profesora</th>
+      </tr>
+      {{#each result}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{description}}</td>
+          <td>{{courseSchedule}}</td>
+          <td>{{FullName}}</td>
+          <td>{{email}}</td>
+          <td id="btn">
+            <a
+              href="courses/delete/{{id}}"
+              class="btn btn-danger btn-sm"
+              role="button"
+              title="Eliminar"
+            >
+              <img src="../../img/trash3-fill.svg" alt="" />
+            </a>
+            <a
+              href="courses/edit/{{id}}"
+              class="btn btn-success btn-sm"
+              role="button"
+              title="Editar"
+            >
+              <img src="../../img/pencil-fill.svg" alt="" />
+
+            </a>
+          </td>
+          <td>
+            <a href="/courses/details/{{id}}">
+              <img
+                src="../../img/plus-circle.svg"
+                alt=""
+                title="Más información"
+              />
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+</div>

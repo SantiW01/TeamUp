@@ -1,0 +1,51 @@
+<div class="container theme-showcase" role="main">
+  <div class="page-header">
+    <h3 class="blog-title">
+      <span class="label label-success p-2">Datos del curso</span>
+    </h3>
+  </div>
+  <form action="/courses/post/" method="post">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Horario</label>
+          <input
+            type="text"
+            value=""
+            class="form-control"
+            name="courseSchedule"
+            placeholder="Horario de la clase"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Profesora a cargo</label>
+          <select name="teacher_id" class="form-control">
+            {{#each teacher}}
+              <option value="{{id}}">
+                {{FullName}}
+              </option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label">Profesora a cargo</label>
+          <select name="typecourses_id" class="form-control">
+            {{#each courses}}
+              <option value="{{id}}">
+                {{description}}
+              </option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success w-10 m-2">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>
