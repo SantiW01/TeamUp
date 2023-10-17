@@ -46,8 +46,12 @@ router.post("/edit/:id", async (req, res) => {
 
 router.get("/delete/:id", async (req, res) => {
   const { id } = req.params;
-  pool.query("DELETE FROM typecourses WHERE id = ?", [id]);
-  res.redirect("/coursesInformation");
+  try {
+    pool.query("DELETE FROM typecourses WHERE id = ?", [id]);
+    res.redirect("/coursesInformation");
+  } catch {
+    res.redirect("/partial/error");
+  }
 });
 
 router.get("/details/:id", async (req, res) => {
@@ -78,7 +82,7 @@ router.post("/details/post/newStudent/:idC", async (req, res) => {
     "INSERT INTO detailcourse set student_id = ?, course_id = ?",
     [insertStudent.id, idC]
   );
-  res.redirect("/coursesInformation");
+  res.redirect("/courses/details/" + idC);
 });
 
 module.exports = router;

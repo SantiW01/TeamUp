@@ -19,10 +19,39 @@ router.post("/post", async (req, res) => {
   res.redirect("/degreeInformation");
 });
 
-router.get("/edit/:id", async (req, res) => {
+router.get("/newTeacher/post", async (req, res) => {
+  res.render("partial/InsertDegreeNT");
+});
+
+router.post("/newTeacher/post", async (req, res) => {
+  const { description } = req.body;
+  const updateDegree = {
+    description,
+  };
+  await pool.query("INSERT INTO degree set ? ", [updateDegree]);
+  res.redirect("/teacher/post");
+});
+
+router.get("/editTeacher/post/:id", async (req, res) => {
   const { id } = req.params;
   const degrees = await pool.query("SELECT * FROM degree where id = ?", [id]);
   console.log(degrees);
+  res.render("partial/InsertDegreeET", { degree: degrees[0], id: id });
+});
+
+router.post("/editTeacher/post/:id", async (req, res) => {
+  const { id } = req.params;
+  const { description } = req.body;
+  const updateDegree = {
+    description,
+  };
+  await pool.query("INSERT INTO degree set ? ", [updateDegree]);
+  res.redirect("/teacher/edit/" + id);
+});
+
+router.get("/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const degrees = await pool.query("SELECT * FROM degree where id = ?", [id]);
   res.render("partial/editDegree", { degree: degrees[0] });
 });
 

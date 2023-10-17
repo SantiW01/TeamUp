@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../database");
+const { CheckIfExist } = require("../lib/CheckIfExist");
 
 router.get("/all", async (req, res) => {
   const teachers = await pool.query("SELECT * FROM teacher");
@@ -14,8 +15,13 @@ router.get("/post", async (req, res) => {
 
 router.get("/delete/:id", async (req, res) => {
   const { id } = req.params;
-  pool.query("DELETE FROM teacher WHERE id = ?", [id]);
-  res.redirect("/teacherInformation");
+  try {
+    pool.query("DELETE FROM teacher WHERE id = ?", [id]);
+  } catch (error) {
+    console.log("Error: " + error);
+  } finally {
+    res.redirect("/teacherInformation");
+  }
 });
 
 router.post("/post", async (req, res) => {

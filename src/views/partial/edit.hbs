@@ -54,11 +54,16 @@
                 <option value="{{description}}">{{description}}</option>
               {{/each}}
             </select>
-            <a href="/degree/post" title="Añade un nuevo trabajo"><img
+            <a
+              href="/degree/editTeacher/post/{{teacher.id}}"
+              title="Añade un nuevo trabajo"
+            >
+              <img
                 src="../../img/plus-circle.svg"
                 alt=""
                 class="translate-bottom p-3"
-              /></a>
+              />
+            </a>
           </div>
         </div>
       </div>

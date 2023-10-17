@@ -20,6 +20,7 @@ app.engine(
     layoutsDir: path.join(app.get("views"), "layouts"),
     partialsDir: path.join(app.get("views"), "partial"),
     extname: ".hbs",
+    helpers: require("./lib/handlebars"),
   })
 );
 
@@ -34,7 +35,6 @@ app.use(
   })
 );
 
-console.log(__dirname);
 app.use("/img", express.static(path.join(__dirname, "img")));
 app.use("/css", express.static(path.join(__dirname, "css")));
 app.use(flash());
