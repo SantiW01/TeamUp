@@ -1,7 +1,7 @@
 USE teacher;
 
 CREATE TABLE teacher(
-    id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1
+    id INT(11) NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL
     surname VARCHAR(50) NOT NULL
     email varchar(319) NOT NULL
@@ -10,22 +10,22 @@ CREATE TABLE teacher(
 )     
 
 CREATE TABLE degree (
-    id int(11) NOT NULL AUTO_INCREMENET
-    description varchar(50) NOT NULL
-    PRIMARY KEY(id)
+    id int(11) NOT NULL AUTO_INCREMENT,
+    description varchar(50) NOT NULL,
+    PRIMARY KEY(id),
 )
 
 CREATE TABLE student(
-    id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1
-    name VARCHAR(50) NOT NULL
-    surname VARCHAR(50) NOT NULL
-    email varchar(319) NOT NULL
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    email varchar(319) NOT NULL,
     PRIMARY KEY(id)
 )     
 
 CREATE TABLE Typecourses (
-    id int(11) NOT NULL AUTO_INCREMENET
-    description varchar(50) NOT NULL
+    id int(11) NOT NULL AUTO_INCREMENET,
+    description varchar(50) NOT NULL,
     PRIMARY KEY(id)
 )
 
@@ -46,3 +46,6 @@ CREATE TABLE detailCourse(
     PRIMARY KEY(id), 
     constraint fk_student foreign key (student_id) references student(id), 
 ); 
+Create Table file(
+    id Int AUTO_INCREMENT Not Null Primary Key, file_name Varchar(30)
+);
