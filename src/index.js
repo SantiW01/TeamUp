@@ -7,9 +7,8 @@ const MySQLStore = require("express-mysql-session")(session);
 const passport = require("passport");
 const exphbs = require("express-handlebars");
 const { database } = require("./keys");
-
+const helper = require("./Components/helper");
 const app = express();
-
 app.set("port", process.env.PORT || 4000);
 app.set("views", path.join(__dirname, "views"));
 
@@ -20,9 +19,22 @@ app.engine(
     layoutsDir: path.join(app.get("views"), "layouts"),
     partialsDir: path.join(app.get("views"), "partial"),
     extname: ".hbs",
-    helpers: require("./lib/handlebars"),
   })
 );
+
+helper.registerHelper("role", function (value) {
+  if (value == 1) {
+    return 1;
+  }
+
+  if (value == 2) {
+    return 2;
+  }
+
+  if (value == 3) {
+    return 3;
+  }
+});
 
 app.set("view engine", ".hbs");
 

@@ -49,3 +49,4 @@ CREATE TABLE detailCourse(
 Create Table file(
     id Int AUTO_INCREMENT Not Null Primary Key, file_name Varchar(30)
 );
+create table roles( id int(3) not null AUTO_INCREMENT, description varchar(50) not null, primary key(id) );
