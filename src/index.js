@@ -22,20 +22,6 @@ app.engine(
   })
 );
 
-helper.registerHelper("role", function (value) {
-  if (value == 1) {
-    return 1;
-  }
-
-  if (value == 2) {
-    return 2;
-  }
-
-  if (value == 3) {
-    return 3;
-  }
-});
-
 app.set("view engine", ".hbs");
 
 app.use(

@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../database");
-const { CheckIfExist } = require("../lib/CheckIfExist");
 
 router.get("/all", async (req, res) => {
   const teachers = await pool.query("SELECT * FROM teacher");

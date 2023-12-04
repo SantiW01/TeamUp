@@ -1,0 +1,10 @@
+<div class="container theme-showcase" role="main">
+  <h3>Información sobre de los archivos</h3>
+  <div class="table-responsive">
+    {{#each result}}
+      <form action="/public/{{id}}" method="get">
+        <button type="submit">{{file_name}}</button>
+      </form>
+    {{/each}}
+  </div>
+</div>
