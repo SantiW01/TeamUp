@@ -47,7 +47,7 @@ app.use("/courses", require("./routes/CoursesLinks"));
 app.use("/degree", require("./routes/degreeLinks"));
 app.use("/student", require("./routes/studentLinks"));
 app.use("/teacher", require("./routes/teacherLinks"));
-
+app.use("/files", require("./routes/fileLinks"));
 app.listen(app.get("port"), () => {
   console.log("Server on port", app.get("port"));
 });
