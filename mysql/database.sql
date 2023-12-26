@@ -4,8 +4,11 @@ CREATE TABLE teacher(
     name VARCHAR(50) NOT NULL,
     surname VARCHAR(50) NOT NULL,
     email varchar(319) NOT NULL,
+    degree_id INT(11) NOT NULL,
+    role_id varchar(10) NOT NULL,
     PRIMARY KEY(id),
     constraint fk_degree foreign key (degree_id) references degree(id);
+    constraint fk_role foreign key (role_id) references roles(id);
 );     
 
 CREATE TABLE degree (

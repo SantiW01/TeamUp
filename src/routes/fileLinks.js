@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../database");
 const multer = require("multer");
+const { beStudent, beAdmin, beTeacher } = require("../lib/checkRole");
 const MIMETYPES = ["application/pdf"];
 
 const storage = multer.diskStorage({
@@ -19,7 +20,7 @@ const upload = multer({
   storage: storage,
 });
 
-router.get("/", upload.single("file"), (req, res) => {
+router.get("/", beStudent, upload.single("file"), (req, res) => {
   res.render("partial/UploadFile");
 });
 
@@ -29,7 +30,7 @@ router.post("/post", upload.single("file"), async (req, res) => {
   res.redirect("/");
 });
 
-router.get("/show", upload.single("file"), async (req, res) => {
+router.get("/show", beTeacher, upload.single("file"), async (req, res) => {
   const query = await pool.query("SELECT id, file_name from file");
   res.render("partial/showfiles", { result: query });
 });

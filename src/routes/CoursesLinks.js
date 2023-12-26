@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../database");
-router.get("/post", async (req, res) => {
+const { beAdmin } = require("../lib/checkRole");
+router.get("/post", beAdmin, async (req, res) => {
   const teacher = await pool.query(
     "SELECT id, concat(name, ' ', surname) as 'FullName' FROM teacher"
   );
