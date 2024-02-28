@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../database");
-const { beTeacher, beAdmin } = require("../lib/checkRole");
 
 router.get("/all", async (req, res) => {
   const teachers = await pool.query("SELECT * FROM teacher");
   res.send(teachers);
 });
 
-router.get("/post", beAdmin, async (req, res) => {
+router.get("/post", async (req, res) => {
   const degrees = await pool.query("SELECT * FROM degree");
   res.render("partial/Insert", { result: degrees });
 });

@@ -1,0 +1,51 @@
+<div class="container theme-showcase" role="main">
+
+  <h3 class="blog-title"><span class="label label-success">Datos del Usuario</span></h3>
+
+  <form>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label for="perfil" class="control-label">Perfil</label>
+          <select id="perfil" name="perfil" class="form-control">
+            <option value="EDITOR">EDITOR</option>
+            <option value="GERENTE">GERENTE</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label for="pwd">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="pwd"
+            id="pwd"
+            required="required"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required="required"
+          />
+        </div>
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-danger">Guardar</button>
+  </form>
+
+  <hr class="featurette-divider" />
+</div>
